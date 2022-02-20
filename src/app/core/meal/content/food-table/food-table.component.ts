@@ -18,13 +18,13 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class FoodTableComponent {
   dataSource = ELEMENT_DATA;
-  columnsToDisplay = ['name', 'weight', 'protein', 'carbohydrates', 'fat'];
+  columnsToDisplay = ['name', 'unit', 'protein', 'carbohydrates', 'fat'];
   expandedElement: FoodElement | undefined;
 }
 
 export interface FoodElement {
   name: string;
-  weight: number;
+  unit: number;
   protein: number;
   carbohydrates: number;
   fat: number;
@@ -35,7 +35,7 @@ export interface FoodElement {
 const ELEMENT_DATA: FoodElement[] = [
   {
     name: 'Yogurt',
-    weight: 150,
+    unit: 150,
     protein: 15,
     carbohydrates: 21,
     fat: 1,
@@ -44,7 +44,7 @@ const ELEMENT_DATA: FoodElement[] = [
   },
   {
     name: 'Cheese',
-    weight: 50,
+    unit: 50,
     protein: 17,
     carbohydrates: 11,
     fat: 21,
@@ -53,7 +53,7 @@ const ELEMENT_DATA: FoodElement[] = [
   },
   {
     name: 'Chicken breast',
-    weight: 333,
+    unit: 333,
     protein: 55,
     carbohydrates: 1,
     fat: 1,
@@ -62,7 +62,7 @@ const ELEMENT_DATA: FoodElement[] = [
   },
   {
     name: 'Lettuce',
-    weight: 1550,
+    unit: 1550,
     protein: 15,
     carbohydrates: 51,
     fat: 3,
