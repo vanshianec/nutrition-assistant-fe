@@ -18,60 +18,65 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class FoodTableComponent {
   dataSource = ELEMENT_DATA;
-  columnsToDisplay = ['name', 'kcal', 'protein', 'carbohydrates', 'fat', 'price'];
+  columnsToDisplay = ['description', 'kcal', 'protein', 'carbs', 'fat', 'price'];
   expandedElement: FoodElement | undefined;
 }
 
 export interface FoodElement {
-  name: string;
-  kcal: number;
+  description: string;
+  unit: string;
   protein: number;
-  carbohydrates: number;
+  carbs: number;
   fat: number;
+  kcal: number;
   price: number;
   symbol: string;
-  description: string;
+  innerText: string;
 }
 
 const ELEMENT_DATA: FoodElement[] = [
   {
-    name: 'Yogurt',
-    kcal: 150,
+    description: 'Yogurt (Vedrare), Lidl',
+    unit: '350 grams',
     protein: 15,
-    carbohydrates: 21,
+    carbs: 21,
     fat: 1,
+    kcal: 150,
     price: 14,
     symbol: 'Y',
-    description: `Some description for yogurt`,
+    innerText: `Some description for yogurt`,
   },
   {
-    name: 'Cheese',
-    kcal: 50,
+    description: 'Cheese (Olympus), Kaufland',
+    unit: '3 oz',
     protein: 17,
-    carbohydrates: 11,
+    carbs: 11,
     fat: 21,
+    kcal: 50,
     price: 1.54,
     symbol: 'C',
-    description: `Some description for cheese`,
+    innerText: `Some description for cheese`,
   },
   {
-    name: 'Chicken breast',
-    kcal: 333,
+    description: 'Chicken breast',
+    unit: '1 lb',
     protein: 55,
-    carbohydrates: 1,
+    carbs: 1,
     fat: 1,
+    kcal: 333,
     price: 3.54,
     symbol: 'C',
-    description: `Some description for chicken breast`,
+    innerText: `Some description for chicken breast`,
   },
   {
-    name: 'Lettuce',
-    kcal: 1550,
+    description: 'Milk',
+    unit: '500 ml',
     protein: 15,
-    carbohydrates: 51,
+    carbs: 11,
     fat: 3,
+    kcal: 50,
     price: 6.4,
     symbol: 'L',
-    description: `Some description for lettuce`,
+    innerText: `Some description for lettuce`,
   },
 ];
