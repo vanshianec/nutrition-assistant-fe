@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Food} from "../../../../shared/models/food";
+import {ColumnData} from "./column-data";
 
 /**
  * @title Table with expandable rows
@@ -16,65 +18,66 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     ]),
   ],
 })
-export class FoodTableComponent {
+export class FoodTableComponent implements OnInit {
   dataSource = ELEMENT_DATA;
-  columnsToDisplay = ['description', 'kcal', 'protein', 'carbs', 'fat', 'price'];
-  expandedElement: FoodElement | undefined;
+  expandedElement: Food | undefined;
+
+  columnData: ColumnData[] = [{name: 'description'}, {name: 'calories', displayUnit: 'kcal'},
+    {name: 'protein', displayUnit: 'g'}, {name: 'carbs', displayUnit: 'g'}, {name: 'fat', displayUnit: 'g'},
+    {name: 'price', displayUnit: 'EUR'}];
+
+  columnToDisplay: string[] | undefined;
+
+  ngOnInit() : void {
+    this.columnToDisplay = this.columnData.map(c => c.name);
+  }
 }
 
-export interface FoodElement {
-  description: string;
-  unit: string;
-  protein: number;
-  carbs: number;
-  fat: number;
-  kcal: number;
-  price: number;
-  symbol: string;
-  innerText: string;
-}
-
-const ELEMENT_DATA: FoodElement[] = [
+const ELEMENT_DATA: Food[] = [
   {
     description: 'Yogurt (Vedrare), Lidl',
-    unit: '350 grams',
+    unit: 350,
+    displayUnit: 'g',
     protein: 15,
     carbs: 21,
     fat: 1,
-    kcal: 150,
+    calories: 150,
     price: 14,
     symbol: 'Y',
     innerText: `Some description for yogurt`,
   },
   {
     description: 'Cheese (Olympus), Kaufland',
-    unit: '3 oz',
+    unit: 3,
+    displayUnit: 'oz',
     protein: 17,
     carbs: 11,
     fat: 21,
-    kcal: 50,
+    calories: 50,
     price: 1.54,
     symbol: 'C',
     innerText: `Some description for cheese`,
   },
   {
     description: 'Chicken breast',
-    unit: '1 lb',
+    unit: 1,
+    displayUnit: 'lb',
     protein: 55,
     carbs: 1,
     fat: 1,
-    kcal: 333,
+    calories: 333,
     price: 3.54,
     symbol: 'C',
     innerText: `Some description for chicken breast`,
   },
   {
     description: 'Milk',
-    unit: '500 ml',
+    unit: 500,
+    displayUnit: 'ml',
     protein: 15,
     carbs: 11,
     fat: 3,
-    kcal: 50,
+    calories: 50,
     price: 6.4,
     symbol: 'L',
     innerText: `Some description for lettuce`,

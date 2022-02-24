@@ -17,6 +17,10 @@ tr.detail-row {
   text-align: center;
 }
 
+.header-cell-content span, small {
+  display: block;
+}
+
 .mat-header-row {
   background-color: $primary;
 }
