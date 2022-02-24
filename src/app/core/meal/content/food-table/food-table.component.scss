@@ -1,9 +1,32 @@
+@import '../../../../../styles/colors';
+
+.mat-table {
+  border-radius: 15px;
+  overflow:hidden !important;
+}
+
 table {
   width: 100%;
 }
 
 tr.detail-row {
   height: 0;
+}
+
+.mat-header-cell:not(:first-child), .mat-cell:not(:first-child) {
+  text-align: center;
+}
+
+.header-cell-content span, small {
+  display: block;
+}
+
+.mat-header-row {
+  background-color: $primary;
+}
+
+.mat-header-row th {
+  color: white;
 }
 
 tr.element-row:not(.expanded-row):hover {

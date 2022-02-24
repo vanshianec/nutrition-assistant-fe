@@ -1,19 +1,21 @@
 <table mat-table
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
-  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay; first as isFirst">
-    <ng-container *ngIf="isFirst; else defaultColumnHeader">
-      <th mat-header-cell *matHeaderCellDef>Breakfast</th>
-    </ng-container>
-    <ng-template #defaultColumnHeader>
-      <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-    </ng-template>
-    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  <ng-container matColumnDef="{{column.name}}" *ngFor="let column of columnData; first as isFirst">
+    <div>
+      <th mat-header-cell *matHeaderCellDef>
+        <div class = "header-cell-content">
+          <span>{{column.name | titlecase}}</span>
+          <small>{{column?.displayUnit}}</small>
+        </div>
+      </th>
+    </div>
+    <td mat-cell *matCellDef="let element"> {{element[column.name]}} </td>
   </ng-container>
 
   <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
   <ng-container matColumnDef="expandedDetail">
-    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="columnData.length">
       <div class="element-detail"
            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
         <div class="element-diagram">
@@ -23,14 +25,14 @@
         </div>
         <div class="element-description">
           {{element.description}}
-          <span class="element-description-attribution"> -- Wikipedia </span>
+          <span class="element-description-attribution"> {{element.innerText}} </span>
         </div>
       </div>
     </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+  <tr mat-header-row *matHeaderRowDef="columnToDisplay" class="header-row"></tr>
+  <tr mat-row *matRowDef="let element; columns: columnToDisplay;"
       class="element-row"
       [class.expanded-row]="expandedElement === element"
       (click)="expandedElement = expandedElement === element ? null : element">
