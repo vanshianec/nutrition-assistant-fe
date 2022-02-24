@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Food} from "../../../../shared/models/food";
+import {ColumnData} from "./column-data";
 
 /**
  * @title Table with expandable rows
@@ -7,66 +9,77 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'nu-food-table',
   templateUrl: 'food-table.component.html',
-  styleUrls: ['food-table.component.css'],
+  styleUrls: ['food-table.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),
       state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      transition('expanded <=> collapsed', animate('275ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
 })
-export class FoodTableComponent {
+export class FoodTableComponent implements OnInit {
   dataSource = ELEMENT_DATA;
-  columnsToDisplay = ['name', 'weight', 'protein', 'carbohydrates', 'fat'];
-  expandedElement: FoodElement | undefined;
+  expandedElement: Food | undefined;
+
+  columnData: ColumnData[] = [{name: 'description'}, {name: 'calories', displayUnit: 'kcal'},
+    {name: 'protein', displayUnit: 'g'}, {name: 'carbs', displayUnit: 'g'}, {name: 'fat', displayUnit: 'g'},
+    {name: 'price', displayUnit: 'EUR'}];
+
+  columnToDisplay: string[] | undefined;
+
+  ngOnInit() : void {
+    this.columnToDisplay = this.columnData.map(c => c.name);
+  }
 }
 
-export interface FoodElement {
-  name: string;
-  weight: number;
-  protein: number;
-  carbohydrates: number;
-  fat: number;
-  symbol: string;
-  description: string;
-}
-
-const ELEMENT_DATA: FoodElement[] = [
+const ELEMENT_DATA: Food[] = [
   {
-    name: 'Yogurt',
-    weight: 150,
+    description: 'Yogurt (Vedrare), Lidl',
+    unit: 350,
+    displayUnit: 'g',
     protein: 15,
-    carbohydrates: 21,
+    carbs: 21,
     fat: 1,
+    calories: 150,
+    price: 14,
     symbol: 'Y',
-    description: `Some description for yogurt`,
+    innerText: `Some description for yogurt`,
   },
   {
-    name: 'Cheese',
-    weight: 50,
+    description: 'Cheese (Olympus), Kaufland',
+    unit: 3,
+    displayUnit: 'oz',
     protein: 17,
-    carbohydrates: 11,
+    carbs: 11,
     fat: 21,
+    calories: 50,
+    price: 1.54,
     symbol: 'C',
-    description: `Some description for cheese`,
+    innerText: `Some description for cheese`,
   },
   {
-    name: 'Chicken breast',
-    weight: 333,
+    description: 'Chicken breast',
+    unit: 1,
+    displayUnit: 'lb',
     protein: 55,
-    carbohydrates: 1,
+    carbs: 1,
     fat: 1,
+    calories: 333,
+    price: 3.54,
     symbol: 'C',
-    description: `Some description for chicken breast`,
+    innerText: `Some description for chicken breast`,
   },
   {
-    name: 'Lettuce',
-    weight: 1550,
+    description: 'Milk',
+    unit: 500,
+    displayUnit: 'ml',
     protein: 15,
-    carbohydrates: 51,
+    carbs: 11,
     fat: 3,
+    calories: 50,
+    price: 6.4,
     symbol: 'L',
-    description: `Some description for lettuce`,
+    innerText: `Some description for lettuce`,
   },
 ];
