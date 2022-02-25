@@ -13,11 +13,12 @@ tr.detail-row {
   height: 0;
 }
 
-.mat-header-cell:not(:first-child), .mat-cell:not(:first-child) {
+.mat-header-cell:not(:first-child), td.mat-footer-cell:not(:first-child), .mat-cell:not(:first-child) {
   text-align: center;
 }
 
 .header-cell-content span, small {
+  font-weight: normal;
   display: block;
 }
 
@@ -25,7 +26,11 @@ tr.detail-row {
   background-color: $primary;
 }
 
-.mat-header-row th {
+.mat-footer-row {
+  background-color: $secondary-variant;
+}
+
+.mat-header-row th, .mat-footer-row td {
   color: white;
 }
 

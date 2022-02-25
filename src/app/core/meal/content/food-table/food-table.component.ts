@@ -28,8 +28,14 @@ export class FoodTableComponent implements OnInit {
 
   columnToDisplay: string[] | undefined;
 
-  ngOnInit() : void {
+  ngOnInit(): void {
     this.columnToDisplay = this.columnData.map(c => c.name);
+  }
+
+  getTotalAmount(key: string): number {
+    return this.dataSource
+      .map(column => +column[key as keyof Food])
+      .reduce((acc, value) => acc + value, 0);
   }
 }
 
