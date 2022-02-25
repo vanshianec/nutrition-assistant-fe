@@ -8,6 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from '@angular/material/table';
 import { FoodTableComponent } from './core/meal/content/food-table/food-table.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FoodTableComponent } from './core/meal/content/food-table/food-table.co
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
