@@ -30,14 +30,10 @@ tr.detail-row {
   color: white;
 }
 
-.mat-footer-row td {
-  color: $primary-light;
-  font-weight: bold;
+.mat-footer-row {
   font-size: 17px;
-}
-
-tr.mat-footer-row td {
-  border-bottom: 2px solid $primary-dark;
+  background-color: $primary-light;
+  color: white;
 }
 
 tr.element-row:not(.expanded-row):hover {
@@ -46,10 +42,6 @@ tr.element-row:not(.expanded-row):hover {
 
 tr.element-row:not(.expanded-row):active {
   background: #efefef;
-}
-
-tr.element-row:not(.expanded-row):nth-last-child(2) td, {
-  border-bottom: 1px solid $primary-dark;
 }
 
 .element-row td {
