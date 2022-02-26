@@ -26,12 +26,18 @@ tr.detail-row {
   background-color: $primary;
 }
 
-.mat-footer-row {
-  background-color: $secondary-variant;
+.mat-header-row th {
+  color: white;
 }
 
-.mat-header-row th, .mat-footer-row td {
-  color: white;
+.mat-footer-row td {
+  color: $primary-light;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+tr.mat-footer-row td {
+  border-bottom: 2px solid $primary-dark;
 }
 
 tr.element-row:not(.expanded-row):hover {
@@ -40,6 +46,10 @@ tr.element-row:not(.expanded-row):hover {
 
 tr.element-row:not(.expanded-row):active {
   background: #efefef;
+}
+
+tr.element-row:not(.expanded-row):nth-last-child(2) td, {
+  border-bottom: 1px solid $primary-dark;
 }
 
 .element-row td {
