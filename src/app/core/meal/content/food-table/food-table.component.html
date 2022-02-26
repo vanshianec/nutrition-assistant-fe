@@ -1,7 +1,7 @@
 <table mat-table
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
-  <ng-container matColumnDef="{{column.name}}" *ngFor="let column of columnData; first as isFirst">
+  <ng-container matColumnDef="{{column.name}}" *ngFor="let column of columnData; first as isFirst;">
     <div>
       <th mat-header-cell *matHeaderCellDef>
         <div class="header-cell-content">
@@ -11,7 +11,7 @@
       </th>
     </div>
     <td mat-cell *matCellDef="let element"> {{element[column.name]}} </td>
-    <ng-container  *ngIf="isFirst">
+    <ng-container *ngIf="isFirst">
       <td mat-footer-cell *matFooterCellDef>
         <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
           <mat-icon>menu</mat-icon>
@@ -20,7 +20,7 @@
           <mat-icon>favorite</mat-icon>
         </button>
       </td>
-    </ng-container >
+    </ng-container>
     <ng-container *ngIf="!isFirst">
       <td mat-footer-cell *matFooterCellDef>{{getTotalAmount(column.name) | number}}</td>
     </ng-container>
