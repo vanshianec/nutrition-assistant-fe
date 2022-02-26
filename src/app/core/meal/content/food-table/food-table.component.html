@@ -2,16 +2,12 @@
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
   <ng-container matColumnDef="{{column.name}}" *ngFor="let column of columnData; first as isFirst;">
-    <div>
-      <th mat-header-cell *matHeaderCellDef>
-        <div class="header-cell-content">
-          <span>{{column.name | titlecase}}</span>
-          <small>{{column?.displayUnit}}</small>
-        </div>
-      </th>
-    </div>
     <td mat-cell *matCellDef="let element"> {{element[column.name]}} </td>
     <ng-container *ngIf="isFirst">
+      <th mat-header-cell class="header-cell-content" *matHeaderCellDef>
+        <span>Breakfast</span>
+        <small>9:00</small>
+      </th>
       <td mat-footer-cell *matFooterCellDef>
         <button mat-icon-button color="primary" aria-label="Example icon button with a heart icon">
           <mat-icon>menu</mat-icon>
@@ -22,7 +18,13 @@
       </td>
     </ng-container>
     <ng-container *ngIf="!isFirst">
-      <td mat-footer-cell *matFooterCellDef>{{getTotalAmount(column.name) | number}}</td>
+      <th mat-header-cell *matHeaderCellDef>
+        <div class="header-cell-content">
+          <span>{{column.name | titlecase}}</span>
+          <small>{{column?.displayUnit}}</small>
+        </div>
+      </th>
+      <td mat-footer-cell *matFooterCellDef>{{getTotalAmount(column.name) | number}} {{column?.displayUnit}}</td>
     </ng-container>
   </ng-container>
 
