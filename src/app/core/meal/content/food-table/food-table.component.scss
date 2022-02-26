@@ -17,6 +17,10 @@ tr.detail-row {
   text-align: center;
 }
 
+.mat-header-cell:last-child, td.mat-footer-cell:last-child, .mat-cell:last-child {
+  text-align: right;
+}
+
 .header-cell-content span, small {
   font-weight: normal;
   display: block;
@@ -24,6 +28,10 @@ tr.detail-row {
 
 .mat-header-row {
   background-color: $primary;
+}
+
+td .mat-icon-button.icon-overlay{
+  margin-right: 15px;
 }
 
 .mat-header-row th {
