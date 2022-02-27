@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Food} from "../../../../shared/models/food";
 import {ColumnData} from "./column-data";
@@ -19,12 +19,15 @@ import {ColumnData} from "./column-data";
   ],
 })
 export class FoodTableComponent implements OnInit {
+  @Input() descriptionTitle: string = 'Breakfast';
+  @Input() descriptionSubtitle?: string = '9:00';
+
   dataSource = ELEMENT_DATA;
   expandedElement: Food | undefined;
 
   columnData: ColumnData[] = [{name: 'description'}, {name: 'calories', displayUnit: 'kcal'},
     {name: 'protein', displayUnit: 'g'}, {name: 'carbs', displayUnit: 'g'}, {name: 'fat', displayUnit: 'g'},
-    {name: 'price', displayUnit: 'EUR'}];
+    {name: 'price', displayUnit: 'EUR'}, {name: 'deleteRow'}];
 
   columnToDisplay: string[] | undefined;
 
@@ -41,7 +44,7 @@ export class FoodTableComponent implements OnInit {
 
 const ELEMENT_DATA: Food[] = [
   {
-    description: 'Yogurt (Vedrare), Lidl',
+    description: 'Vedrare - Cottage Cheese (Kaufland), 400 g',
     unit: 350,
     displayUnit: 'g',
     protein: 15,
@@ -53,7 +56,7 @@ const ELEMENT_DATA: Food[] = [
     innerText: `Some description for yogurt`,
   },
   {
-    description: 'Cheese (Olympus), Kaufland',
+    description: 'Olympus - Feta Cheese (Kaufland), 3 oz',
     unit: 3,
     displayUnit: 'oz',
     protein: 17,
@@ -65,7 +68,7 @@ const ELEMENT_DATA: Food[] = [
     innerText: `Some description for cheese`,
   },
   {
-    description: 'Chicken breast',
+    description: 'Chicken breast (Lidl), 1 lb',
     unit: 1,
     displayUnit: 'lb',
     protein: 55,
@@ -77,7 +80,7 @@ const ELEMENT_DATA: Food[] = [
     innerText: `Some description for chicken breast`,
   },
   {
-    description: 'Milk',
+    description: 'Vereya - Milk (Lidl), 500 ml',
     unit: 500,
     displayUnit: 'ml',
     protein: 15,
