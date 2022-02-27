@@ -20,7 +20,7 @@ import {ColumnData} from "./column-data";
 })
 export class FoodTableComponent implements OnInit {
   @Input() descriptionTitle: string = 'Breakfast';
-  @Input() descriptionSubtitle: string = '9:00';
+  @Input() descriptionSubtitle?: string = '9:00';
 
   dataSource = ELEMENT_DATA;
   expandedElement: Food | undefined;

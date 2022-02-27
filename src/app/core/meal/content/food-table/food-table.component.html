@@ -5,8 +5,7 @@
   <ng-container matColumnDef="{{column.name}}" *ngFor="let column of columnData; let first = first; let last = last">
     <ng-container *ngIf="first">
       <th mat-header-cell class="first-header-description" *matHeaderCellDef>
-        <span class="description-title">{{descriptionTitle}}</span>
-        <mat-icon [inline] = "true">noise_control_off</mat-icon>
+        <span class="description-title">{{descriptionTitle | titlecase}}</span>
         <span class="description-subtitle">{{descriptionSubtitle}}</span>
       </th>
       <td mat-cell *matCellDef="let element">{{element[column.name]}}</td>
