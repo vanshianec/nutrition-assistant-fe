@@ -2,7 +2,7 @@
 
 .mat-table {
   border-radius: 15px;
-  overflow:hidden !important;
+  overflow: hidden !important;
 }
 
 table {
@@ -26,11 +26,24 @@ tr.detail-row {
   display: block;
 }
 
+.first-header-description {
+  font-weight: normal;
+
+  mat-icon {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .description-title {
+    font-size: 26px;
+  }
+}
+
 .mat-header-row {
   background-color: $primary;
 }
 
-td .mat-icon-button.icon-overlay{
+td .mat-icon-button.icon-overlay {
   margin-right: 15px;
 }
 
