@@ -2,7 +2,7 @@
 
 .mat-table {
   border-radius: 15px;
-  overflow:hidden !important;
+  overflow: hidden !important;
 }
 
 table {
@@ -13,19 +13,52 @@ tr.detail-row {
   height: 0;
 }
 
-.mat-header-cell:not(:first-child), .mat-cell:not(:first-child) {
+.mat-header-cell:not(:first-child), td.mat-footer-cell:not(:first-child), .mat-cell:not(:first-child) {
   text-align: center;
 }
 
+.mat-header-cell:last-child, td.mat-footer-cell:last-child, .mat-cell:last-child {
+  text-align: right;
+}
+
 .header-cell-content span, small {
+  font-weight: normal;
   display: block;
+}
+
+.first-header-description {
+  font-weight: normal;
+
+  mat-icon {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .description-title {
+    font-size: 23px;
+  }
+
+  .description-subtitle {
+    margin-left: 11px;
+    color: #ececec;
+  }
 }
 
 .mat-header-row {
   background-color: $primary;
 }
 
+td .mat-icon-button.icon-overlay {
+  margin-right: 15px;
+}
+
 .mat-header-row th {
+  color: white;
+}
+
+.mat-footer-row {
+  font-size: 17px;
+  background-color: $primary-light;
   color: white;
 }
 

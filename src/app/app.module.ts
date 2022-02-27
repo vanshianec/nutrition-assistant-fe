@@ -8,19 +8,25 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from '@angular/material/table';
 import { FoodTableComponent } from './core/meal/content/food-table/food-table.component';
+import {MatIconModule} from "@angular/material/icon";
+import { DiaryComponent } from './core/diary/diary.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
     AppComponent,
     MealComponent,
     FoodTableComponent,
+    DiaryComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

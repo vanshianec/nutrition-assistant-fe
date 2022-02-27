@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'nu-meal',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meal.component.scss']
 })
 export class MealComponent implements OnInit {
+  @Input() title: string = '';
+  @Input() subtitle?: string = '';
 
   constructor() { }
 
