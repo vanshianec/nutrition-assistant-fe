@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+}
+
+.header ngx-charts-advanced-pie-chart {
+  width: 80%;
+  height: 190px;
+}
+
+.action-buttons {
+  padding-top: 5px;
+}
+
+.align-accordion-headers .mat-expansion-panel-header-title,
+.align-accordion-headers .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.align-accordion-headers .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.align-accordion-headers .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
