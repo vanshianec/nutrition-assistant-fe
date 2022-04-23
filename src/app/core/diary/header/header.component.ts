@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ChartType} from "angular-google-charts";
 
 @Component({
   selector: 'nu-header',
@@ -7,26 +8,26 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  single1: any[] = [
-    {
-      "name": "Protein",
-      "value": 250
-    },
-    {
-      "name": "Carbs",
-      "value": 180
-    },
-    {
-      "name": "Fat",
-      "value": 80
-    }
+  charType: ChartType = ChartType.PieChart;
+
+  data = [
+    [
+      "Protein", 1080
+    ],
+    [
+      "Carbs", 700
+    ],
+    [
+      "Fat", 900
+    ]
   ];
 
-  colorScheme1 = {
-    name: 'color',
-    selectable: true,
-    group: ScaleType.Ordinal,
-    domain: ['#2c83e3', '#3bc069', '#fc1d41']
+
+  options = {
+    colors: ['#2c83e3', '#3bc069', '#fc1d41'],
+    tooltip: {'text': 'percentage'},
+    legend: {'position': 'top', 'alignment' : 'center'},
+    is3D: true
   };
 
   constructor() {
