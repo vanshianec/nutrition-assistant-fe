@@ -12,8 +12,9 @@ import {MatIconModule} from "@angular/material/icon";
 import {DiaryComponent} from './core/diary/diary.component';
 import {MatDividerModule} from "@angular/material/divider";
 import {HeaderComponent} from './core/diary/header/header.component';
-import {PieChartModule} from "@swimlane/ngx-charts";
 import {MatExpansionModule} from "@angular/material/expansion";
+import {MicronutrientsComponent} from "./core/diary/micronutrients/micronutrients.component";
+import {GoogleChartsModule} from "angular-google-charts";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
     FoodTableComponent,
     DiaryComponent,
     HeaderComponent,
+    MicronutrientsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,8 +33,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatTableModule,
     MatIconModule,
     MatDividerModule,
-    PieChartModule,
-    MatExpansionModule
+    MatExpansionModule,
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,44 +1,6 @@
-<div class="header">
-  <ngx-charts-advanced-pie-chart
-    [scheme]="colorScheme1"
-    [results]="single1"
-  >
-  </ngx-charts-advanced-pie-chart>
-  <div class="action-buttons">
-    <button mat-button (click)="accordion.openAll()">Expand All</button>
-    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
-  </div>
-</div>
-
-<mat-accordion class="align-accordion-headers" multi>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Vitamins
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <ng-template matExpansionPanelContent>
-      <ngx-charts-pie-grid
-        [scheme]="colorScheme2"
-        [results]="single2"
-      >
-      </ngx-charts-pie-grid>
-    </ng-template>
-  </mat-expansion-panel>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Minerals
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <ng-template matExpansionPanelContent>
-      <ngx-charts-pie-grid
-        [scheme]="colorScheme3"
-        [results]="single3"
-      >
-      </ngx-charts-pie-grid>
-    </ng-template>
-  </mat-expansion-panel>
-</mat-accordion>
-
-
+<google-chart
+  [type] = "charType"
+  [data] = "data"
+  [options]="options"
+>
+</google-chart>
