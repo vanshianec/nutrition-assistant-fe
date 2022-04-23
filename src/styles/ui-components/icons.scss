@@ -1,6 +1,8 @@
-.icon-overlay {
+@use "sass:map";
+
+span.mat-button-wrapper mat-icon.icon-overlay {
   color: white;
-  background-color: $primary-light;
+  background-color: $primary-color-light;
 }
 
 .delete-icon:hover {
