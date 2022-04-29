@@ -14,7 +14,6 @@ import {MatDividerModule} from "@angular/material/divider";
 import {HeaderComponent} from './core/diary/header/header.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MicronutrientsComponent} from "./core/diary/micronutrients/micronutrients.component";
-import {GoogleChartsModule} from "angular-google-charts";
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import {GoogleChartsModule} from "angular-google-charts";
     MatTableModule,
     MatIconModule,
     MatDividerModule,
-    MatExpansionModule,
-    GoogleChartsModule
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
