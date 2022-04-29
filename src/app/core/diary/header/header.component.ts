@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ChartType} from "angular-google-charts";
 
 @Component({
   selector: 'nu-header',
@@ -8,32 +7,21 @@ import {ChartType} from "angular-google-charts";
 })
 export class HeaderComponent implements OnInit {
 
-  charType: ChartType = ChartType.PieChart;
-
-  data = [
-    [
-      "Protein", 1080
-    ],
-    [
-      "Carbs", 700
-    ],
-    [
-      "Fat", 900
-    ]
-  ];
-
-
-  options = {
-    colors: ['#2c83e3', '#3bc069', '#fc1d41'],
-    tooltip: {'text': 'percentage'},
-    legend: {'position': 'top', 'alignment' : 'center'},
-    is3D: true
-  };
-
-  constructor() {
-  }
+  data: any;
 
   ngOnInit(): void {
+    this.data = {
+      labels: ['Protein', 'Carbs', 'Fat'],
+      datasets: [
+        {
+          data: [270, 190, 55],
+          backgroundColor: [
+            "#2c83e3",
+            "#3bc069",
+            "#fc1d41"
+          ]
+        }
+      ]
+    }
   }
-
 }

@@ -14,6 +14,7 @@ import {MatDividerModule} from "@angular/material/divider";
 import {HeaderComponent} from './core/diary/header/header.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MicronutrientsComponent} from "./core/diary/micronutrients/micronutrients.component";
+import {ChartModule} from "primeng/chart";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MicronutrientsComponent} from "./core/diary/micronutrients/micronutrient
     MatTableModule,
     MatIconModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
