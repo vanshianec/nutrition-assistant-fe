@@ -15,6 +15,9 @@ import {HeaderComponent} from './core/diary/header/header.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MicronutrientsComponent} from "./core/diary/micronutrients/micronutrients.component";
 import {ChartModule} from "primeng/chart";
+import {ProgressBarModule} from "primeng/progressbar";
+import {KnobModule} from "primeng/knob";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,13 +31,16 @@ import {ChartModule} from "primeng/chart";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatCardModule,
     MatButtonModule,
     MatTableModule,
     MatIconModule,
     MatDividerModule,
     MatExpansionModule,
-    ChartModule
+    ChartModule,
+    ProgressBarModule,
+    KnobModule
   ],
   providers: [],
   bootstrap: [AppComponent]

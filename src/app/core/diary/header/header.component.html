@@ -1,1 +1,27 @@
-<p-chart type="pie" [data]="data" width="290px" height="190px" [responsive]="false"></p-chart>
+<div class="grid formgrid">
+  <div class="field col-12 md:col-3">
+    <h5>Calories</h5>
+    <p-progressBar [value]="calories" [style]="{'height': '12px'}"></p-progressBar>
+
+    <h5>Protein</h5>
+    <p-progressBar [value]="protein" [style]="{'height': '12px'}"></p-progressBar>
+
+    <h5>Carbs</h5>
+    <p-progressBar [value]="carbs" [style]="{'height': '12px'}"></p-progressBar>
+
+    <h5>Fat</h5>
+    <p-progressBar [value]="fat" [style]="{'height': '12px'}"></p-progressBar>
+  </div>
+  <div class="field col-12 md:col-3">
+    <p-chart type="pie" [data]="data" width="290px" height="190px" [responsive]="false"></p-chart>
+  </div>
+  <div class="field col-12 md:col-3">
+    <h5>Vitamins</h5>
+    <p-knob [(ngModel)]="minerals" [readonly]="true"></p-knob>
+  </div>
+  <div class="field col-12 md:col-3">
+    <h5>Minerals</h5>
+    <p-knob [(ngModel)]="vitamins" [readonly]="true"></p-knob>
+  </div>
+</div>
+
